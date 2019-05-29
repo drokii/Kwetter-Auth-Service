@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Kwetter-Auth-Microservice:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Kwetter_Auth_Microservice_war_exploded.war</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Kwetter-Auth-Microservice/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Kwetter-Auth-Microservice" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
