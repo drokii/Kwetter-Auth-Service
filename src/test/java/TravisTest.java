@@ -8,9 +8,5 @@ public class TravisTest {
     public void travisTestPass() {
         assertTrue(1 == 1);
     }
-
-    @Test
-    public void travisTestFail() {
-        assertTrue(1 != 1);
-    }
+    
 }
