@@ -1,7 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c479a83-76e9-4141-957c-1a9f40cb4a7a" name="Default Changelist" comment="" />
+    <list default="true" id="9c479a83-76e9-4141-957c-1a9f40cb4a7a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Kwetter_Auth_Microservice_ear_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Kwetter_Auth_Microservice_ejb_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Kwetter_Auth_Microservice_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/JBoss_Weld_2_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/JBoss_Weld_2_0_3__2_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kwetter-Auth-Microservice.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/META-INF/application.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cdi-api-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cdi-api-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cdi-api.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-api-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-api-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-api.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-core-impl-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-core-impl-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-core-impl.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-core-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-core-jsf-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-core-jsf-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-core-jsf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-core-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-core.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-se-core-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-se-core-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-se-core.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-se-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-se.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-servlet-core-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-servlet-core-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-servlet-core.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-servlet-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-servlet-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-servlet.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-spi-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-spi-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/weld-spi.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,31 +60,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -50,29 +78,15 @@
     <option name="width" value="1936" />
     <option name="height" value="1096" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Kwetter-Auth-Microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kwetter-Auth-Microservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kwetter-Auth-Microservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kwetter-Auth-Microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -137,17 +151,17 @@
       <workItem from="1559130010948" duration="300000" />
       <workItem from="1559133579107" duration="346000" />
       <workItem from="1559133979537" duration="2000" />
+      <workItem from="1559134044830" duration="337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="648000" />
+    <option name="totallyTimeSpent" value="985000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
