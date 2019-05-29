@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="kwetter-auth-microservice" default="all">
+  
+  
+  <property file="build.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+    <include name="*.klib"/>
+    <include name="*.swc"/>
+    <include name="*.war"/>
+    <include name="*.zip"/>
+    <include name="*.ane"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8.0_144" value="${jdk.home.1.8.0_144}/bin"/>
+  <path id="jdk.classpath.1.8.0_144">
+    <fileset dir="${jdk.home.1.8.0_144}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/access-bridge-32.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8.0_144}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8.0_144}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8.0_144"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.jboss_weld-2.0.3_(2).classpath">
+    <pathelement location="${basedir}/lib/cdi-api.jar"/>
+    <pathelement location="${basedir}/lib/weld-api.jar"/>
+    <pathelement location="${basedir}/lib/weld-core-impl.jar"/>
+    <pathelement location="${basedir}/lib/weld-core-jsf.jar"/>
+    <pathelement location="${basedir}/lib/weld-core.jar"/>
+    <pathelement location="${basedir}/lib/weld-se-core.jar"/>
+    <pathelement location="${basedir}/lib/weld-se.jar"/>
+    <pathelement location="${basedir}/lib/weld-servlet-core.jar"/>
+    <pathelement location="${basedir}/lib/weld-servlet.jar"/>
+    <pathelement location="${basedir}/lib/weld-spi.jar"/>
+  </path>
+  
+  
+  <!-- Application Server Libraries -->
+  
+  <path id="library.jboss_15.0.1.final.classpath">
+    <pathelement location="C:/Users/Pedro/Downloads/wildfly-15.0.1.Final/wildfly-15.0.1.Final/modules/system/layers/base/javax/ejb/api/main/jboss-ejb-api_3.2_spec-1.0.1.Final.jar"/>
+    <pathelement location="C:/Users/Pedro/Downloads/wildfly-15.0.1.Final/wildfly-15.0.1.Final/modules/system/layers/base/javax/servlet/api/main/jboss-servlet-api_4.0_spec-1.0.0.Final.jar"/>
+    <pathelement location="C:/Users/Pedro/Downloads/wildfly-15.0.1.Final/wildfly-15.0.1.Final/modules/system/layers/base/javax/servlet/jsp/api/main/jboss-jsp-api_2.3_spec-1.0.3.Final.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <fileset dir="${javac2.home}">
+      <include name="javac2.jar"/>
+      <include name="jdom.jar"/>
+      <include name="asm-all*.jar"/>
+      <include name="forms-*.jar"/>
+    </fileset>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module Kwetter-Auth-Microservice -->
+  
+  <dirname property="module.kwetter-auth-microservice.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.kwetter-auth-microservice" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.kwetter-auth-microservice" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.kwetter-auth-microservice" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.kwetter-auth-microservice" value="-encoding UTF-8 -source 5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="kwetter-auth-microservice.output.dir" value="${module.kwetter-auth-microservice.basedir}/target/classes"/>
+  <property name="kwetter-auth-microservice.testoutput.dir" value="${module.kwetter-auth-microservice.basedir}/target/test-classes"/>
+  
+  <path id="kwetter-auth-microservice.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="kwetter-auth-microservice.module.production.classpath">
+    <path refid="${module.jdk.classpath.kwetter-auth-microservice}"/>
+    <path refid="library.jboss_15.0.1.final.classpath"/>
+    <path refid="library.jboss_weld-2.0.3_(2).classpath"/>
+  </path>
+  
+  <path id="kwetter-auth-microservice.runtime.production.module.classpath">
+    <pathelement location="${kwetter-auth-microservice.output.dir}"/>
+    <path refid="library.jboss_weld-2.0.3_(2).classpath"/>
+  </path>
+  
+  <path id="kwetter-auth-microservice.module.classpath">
+    <path refid="${module.jdk.classpath.kwetter-auth-microservice}"/>
+    <pathelement location="${kwetter-auth-microservice.output.dir}"/>
+    <path refid="library.jboss_15.0.1.final.classpath"/>
+    <path refid="library.jboss_weld-2.0.3_(2).classpath"/>
+  </path>
+  
+  <path id="kwetter-auth-microservice.runtime.module.classpath">
+    <pathelement location="${kwetter-auth-microservice.testoutput.dir}"/>
+    <pathelement location="${kwetter-auth-microservice.output.dir}"/>
+    <path refid="library.jboss_15.0.1.final.classpath"/>
+    <path refid="library.jboss_weld-2.0.3_(2).classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.kwetter-auth-microservice">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.kwetter-auth-microservice">
+    <patternset refid="excluded.from.module.kwetter-auth-microservice"/>
+  </patternset>
+  
+  <path id="kwetter-auth-microservice.module.sourcepath">
+    <dirset dir="${module.kwetter-auth-microservice.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="kwetter-auth-microservice.module.test.sourcepath">
+    <dirset dir="${module.kwetter-auth-microservice.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.kwetter-auth-microservice" depends="compile.module.kwetter-auth-microservice.production,compile.module.kwetter-auth-microservice.tests" description="Compile module Kwetter-Auth-Microservice"/>
+  
+  <target name="compile.module.kwetter-auth-microservice.production" depends="register.custom.compilers" description="Compile module Kwetter-Auth-Microservice; production classes">
+    <mkdir dir="${kwetter-auth-microservice.output.dir}"/>
+    <javac2 destdir="${kwetter-auth-microservice.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.kwetter-auth-microservice}/javac">
+      <compilerarg line="${compiler.args.kwetter-auth-microservice}"/>
+      <bootclasspath refid="kwetter-auth-microservice.module.bootclasspath"/>
+      <classpath refid="kwetter-auth-microservice.module.production.classpath"/>
+      <src refid="kwetter-auth-microservice.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.kwetter-auth-microservice"/>
+    </javac2>
+    
+    <copy todir="${kwetter-auth-microservice.output.dir}">
+      <fileset dir="${module.kwetter-auth-microservice.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.kwetter-auth-microservice.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.kwetter-auth-microservice.tests" depends="register.custom.compilers,compile.module.kwetter-auth-microservice.production" description="compile module Kwetter-Auth-Microservice; test classes" unless="skip.tests">
+    <mkdir dir="${kwetter-auth-microservice.testoutput.dir}"/>
+    <javac2 destdir="${kwetter-auth-microservice.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.kwetter-auth-microservice}/javac">
+      <compilerarg line="${compiler.args.kwetter-auth-microservice}"/>
+      <bootclasspath refid="kwetter-auth-microservice.module.bootclasspath"/>
+      <classpath refid="kwetter-auth-microservice.module.classpath"/>
+      <src refid="kwetter-auth-microservice.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.kwetter-auth-microservice"/>
+    </javac2>
+    
+    <copy todir="${kwetter-auth-microservice.testoutput.dir}">
+      <fileset dir="${module.kwetter-auth-microservice.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.kwetter-auth-microservice" description="cleanup module">
+    <delete dir="${kwetter-auth-microservice.output.dir}"/>
+    <delete dir="${kwetter-auth-microservice.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.kwetter-auth-microservice, clean.artifact.kwetter-auth-microservice:ear_exploded, clean.artifact.kwetter-auth-microservice:ejb_exploded, clean.artifact.kwetter-auth-microservice:war_exploded" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.kwetter-auth-microservice" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.kwetter-auth-microservice:ear_exploded" value="${basedir}/out/artifacts/Kwetter_Auth_Microservice_ear_exploded"/>
+    <property name="artifact.output.kwetter-auth-microservice:ejb_exploded" value="${basedir}/out/artifacts/Kwetter_Auth_Microservice_ejb_exploded"/>
+    <property name="artifact.output.kwetter-auth-microservice:war_exploded" value="${basedir}/out/artifacts/Kwetter_Auth_Microservice_war_exploded.war"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="clean.artifact.kwetter-auth-microservice:ear_exploded" description="clean Kwetter-Auth-Microservice:ear exploded artifact output">
+    <delete dir="${artifact.output.kwetter-auth-microservice:ear_exploded}"/>
+  </target>
+  
+  <target name="clean.artifact.kwetter-auth-microservice:ejb_exploded" description="clean Kwetter-Auth-Microservice:ejb exploded artifact output">
+    <delete dir="${artifact.output.kwetter-auth-microservice:ejb_exploded}"/>
+  </target>
+  
+  <target name="clean.artifact.kwetter-auth-microservice:war_exploded" description="clean Kwetter-Auth-Microservice:war exploded artifact output">
+    <delete dir="${artifact.output.kwetter-auth-microservice:war_exploded}"/>
+  </target>
+  
+  <target name="artifact.kwetter-auth-microservice:ear_exploded" depends="init.artifacts, artifact.kwetter-auth-microservice:ejb_exploded" description="Build &#39;Kwetter-Auth-Microservice:ear exploded&#39; artifact">
+    <mkdir dir="${artifact.output.kwetter-auth-microservice:ear_exploded}"/>
+    <mkdir dir="${artifact.output.kwetter-auth-microservice:ear_exploded}/META-INF"/>
+    <copy file="${basedir}/META-INF/application.xml" tofile="${artifact.output.kwetter-auth-microservice:ear_exploded}/META-INF/application.xml"/>
+    <mkdir dir="${artifact.output.kwetter-auth-microservice:ear_exploded}/ejb.jar"/>
+    <copy todir="${artifact.output.kwetter-auth-microservice:ear_exploded}/ejb.jar">
+      <fileset dir="${artifact.output.kwetter-auth-microservice:ejb_exploded}"/>
+    </copy>
+  </target>
+  
+  <target name="artifact.kwetter-auth-microservice:ejb_exploded" depends="init.artifacts, compile.module.kwetter-auth-microservice" description="Build &#39;Kwetter-Auth-Microservice:ejb exploded&#39; artifact">
+    <mkdir dir="${artifact.output.kwetter-auth-microservice:ejb_exploded}"/>
+    <copy todir="${artifact.output.kwetter-auth-microservice:ejb_exploded}">
+      <fileset dir="${kwetter-auth-microservice.output.dir}"/>
+    </copy>
+  </target>
+  
+  <target name="artifact.kwetter-auth-microservice:war_exploded" depends="init.artifacts, compile.module.kwetter-auth-microservice" description="Build &#39;Kwetter-Auth-Microservice:war exploded&#39; artifact">
+    <mkdir dir="${artifact.output.kwetter-auth-microservice:war_exploded}"/>
+    <copy todir="${artifact.output.kwetter-auth-microservice:war_exploded}">
+      <fileset dir="${basedir}/web"/>
+    </copy>
+    <mkdir dir="${artifact.output.kwetter-auth-microservice:war_exploded}/WEB-INF"/>
+    <copy file="${basedir}/web/WEB-INF/web.xml" tofile="${artifact.output.kwetter-auth-microservice:war_exploded}/WEB-INF/web.xml"/>
+    <mkdir dir="${artifact.output.kwetter-auth-microservice:war_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.kwetter-auth-microservice:war_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.kwetter-auth-microservice:war_exploded}/WEB-INF/classes">
+      <fileset dir="${kwetter-auth-microservice.output.dir}"/>
+    </copy>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.kwetter-auth-microservice:ear_exploded, artifact.kwetter-auth-microservice:ejb_exploded, artifact.kwetter-auth-microservice:war_exploded" description="Build all artifacts">
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

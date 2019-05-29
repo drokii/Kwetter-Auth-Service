@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="Kwetter-Auth-Microservice:ejb exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Kwetter_Auth_Microservice_ejb_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Kwetter-Auth-Microservice/ejb/EJB" />
+      <element id="module-output" name="Kwetter-Auth-Microservice" />
+    </root>
+  </artifact>
+</component>
