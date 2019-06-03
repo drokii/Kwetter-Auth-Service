@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="authservice">
+    <output-path>$PROJECT_DIR$/classes/artifacts/authservice</output-path>
+    <root id="archive" name="authservice.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Kwetter-Auth-Microservice" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
