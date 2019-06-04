@@ -36,12 +36,12 @@ public class AuthenticationEndpoint {
     }
 
     private String authenticate(String username, String password) throws Exception {
-        HttpResponse<JsonNode> authRequest = Unirest.post( "/user/login")
+        HttpResponse<JsonNode> authRequest = Unirest.post("http://localhost:8080/rest/user/login")
                 .header("content-type", "application/json")
                 .header("accept", "application/json")
                 .body("{\n" +
-                        "  \"username\": 100,\n" +
-                        "  \"password\": \"c34b267f-b81c-4060-b2bd-e09e3537472c\",\n" +
+                        "  \"username\":\" " + username + ",\n" +
+                        "  \"password\":\" " + password + ",\n" +
                         "}")
                 .asJson();
         return authRequest.getBody().toString();
