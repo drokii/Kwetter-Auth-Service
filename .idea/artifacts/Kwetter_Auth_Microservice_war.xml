@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Kwetter-Auth-Microservice:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Kwetter-Auth-Microservice</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Kwetter-Auth-Microservice.war">
+      <element id="artifact" artifact-name="Kwetter-Auth-Microservice:war exploded" />
+    </root>
+  </artifact>
+</component>
