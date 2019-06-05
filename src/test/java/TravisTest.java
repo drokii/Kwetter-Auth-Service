@@ -6,7 +6,6 @@ public class TravisTest {
 
     @Test
     public void travisTestPass() {
-        assertTrue(1 == 1);
     }
     
 }
