@@ -6,7 +6,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
-import javax.ejb.Singleton;
+import javax.inject.Singleton;
 import java.security.Key;
 import java.util.Date;
 
