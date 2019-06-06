@@ -27,24 +27,30 @@ public class AuthenticationEndpoint {
 
         try {
 
-            String token = authenticate(loginRequest.getUsername(), loginRequest.getPassword());
+            String token = issueToken(Integer.parseInt(authenticate(loginRequest.getUsername(), loginRequest.getPassword())));
             return Response.ok(token).build();
 
         } catch (Exception e) {
+            e.printStackTrace();
             return Response.status(Response.Status.FORBIDDEN).build();
         }
     }
 
     private String authenticate(String username, String password) throws Exception {
-        HttpResponse<JsonNode> authRequest = Unirest.post("http://localhost:8080/rest/user/login")
+        System.out.println(password);
+        System.out.println(username);
+        HttpResponse<String> authRequest = Unirest.post("http://localhost:8080/kwetter/rest/user/login")
                 .header("content-type", "application/json")
                 .header("accept", "application/json")
                 .body("{\n" +
-                        "  \"username\":\" " + username + ",\n" +
-                        "  \"password\":\" " + password + ",\n" +
+                        "  \"username\":\"" + username + "\",\n" +
+                        "  \"password\":\"" + password + "\"\n" +
                         "}")
-                .asJson();
-        return authRequest.getBody().toString();
+                .asString();
+        if(authRequest.getBody().equals("Bad Credentials.")){
+            throw new Exception();
+        }
+        return authRequest.getBody();
     }
 
     private String issueToken(int id) {
